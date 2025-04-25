@@ -34,10 +34,16 @@ def main():
                 return
             
         updatable.update(delta_time)
-        for index in asteroids:
-            if index.collision(active_player):
+        for asteroid_index in asteroids:
+            if asteroid_index.collision(active_player):
                 print("Game over!")
                 sys.exit()
+                
+            for shot_index in shots:
+                if shot_index.collision(asteroid_index):
+
+                    shot_index.kill()
+                    asteroid_index.kill()
 
         screen.fill("black")
 
