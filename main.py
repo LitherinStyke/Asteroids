@@ -1,3 +1,4 @@
+import sys
 import pygame
 from constants import *
 from player import Player
@@ -30,6 +31,10 @@ def main():
                 return
             
         updatable.update(delta_time)
+        for index in asteroids:
+            if index.collision(active_player):
+                print("Game over!")
+                sys.exit()
 
         screen.fill("black")
 
