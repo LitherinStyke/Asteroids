@@ -17,6 +17,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+            
+        active_player.update(delta_time)
 
         screen.fill("black")
         active_player.draw(screen)
