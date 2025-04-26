@@ -34,6 +34,7 @@ def main():
                 return
             
         updatable.update(delta_time)
+        print(len(asteroids))
         for asteroid_index in asteroids:
             if asteroid_index.collision(active_player):
                 print("Game over!")
